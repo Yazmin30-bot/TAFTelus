@@ -1,4 +1,4 @@
-const { until, By } = require("selenium-webdriver");
+const { until } = require("selenium-webdriver");
 class BasePage {
     constructor(driver) {
         this.driver = driver;

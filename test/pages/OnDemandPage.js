@@ -1,4 +1,4 @@
-const { until, By } = require("selenium-webdriver");
+const { By } = require("selenium-webdriver");
 const BasePage = require("./BasePage");
 class OnDemandPage extends BasePage {
     constructor(driver) {
@@ -13,10 +13,7 @@ class OnDemandPage extends BasePage {
 
     async viewAllMovies() {
         try {
-            // Wait for the "View All Movies" button to be located and visible
             const onDemandBtn = await this.waitForElement(this.viewAllMoviesBtn);
-            
-            // Scroll to the button and click it
             await this.scrollToElement(onDemandBtn);
             await this.click(onDemandBtn);
         } catch (error) {
@@ -27,12 +24,11 @@ class OnDemandPage extends BasePage {
     
     async filterAnimatedMovies() {
         try {
-            // Wait for the "Filter" button, scroll to it, and click it
             const filterBtn = await this.waitForElement(this.filterBtn);
             await this.scrollToElement(filterBtn);
             await this.click(filterBtn);
     
-            // Wait for the "Animated" option and select it if not already selected
+            
             const radioButton = await this.waitForElement(this.animatedOption);
             const isSelected = await radioButton.isSelected();
             if (!isSelected) {
@@ -42,7 +38,7 @@ class OnDemandPage extends BasePage {
                 console.log("Animated filter option is already selected.");
             }
     
-            // Wait for the "Apply" button, scroll to it, and click it
+          
             const applyBtn = await this.waitForElement(this.applyFilterBtn);
             await this.scrollToElement(applyBtn);
             await this.click(applyBtn);

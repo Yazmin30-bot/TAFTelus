@@ -2,8 +2,8 @@ const { Builder } = require("selenium-webdriver");
 const HomePage = require("../pages/HomePage");
 const MoviesPage = require("../pages/MoviesPage");
 const DetailPage = require("../pages/DetailPage");
-const assert = require("assert");
 const OnDemandPage = require("../pages/OnDemandPage");
+const assert = require("assert");
 
 describe("Telus TV Automation", function () {
     let driver, homePage, onDemandPage,moviesPage,detailPage;
@@ -19,16 +19,14 @@ describe("Telus TV Automation", function () {
     });
 
 
-    it("should continue scrolling until there are all the Animated movies", async function () {
+    it("The asset with the E rating should be displayed", async function () {
         await homePage.closePopup();
         await homePage.goToOnDemand();
         await onDemandPage.viewAllMovies();
         await onDemandPage.filterAnimatedMovies();
         await moviesPage.getAndClickOnRating("E");
         let rating = await detailPage.getRating();
-        assert(rating === "E", `Expected rating "E", but found "${rating}"`);
-    
-
+        assert.strictEqual(rating, "E", `Expected rating "E", but found "${rating}"`);
     });
 
     after(async function () {

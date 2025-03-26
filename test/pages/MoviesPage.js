@@ -1,4 +1,4 @@
-const { until, By } = require("selenium-webdriver");
+const { By } = require("selenium-webdriver");
 const BasePage = require("./BasePage");
 
 class MoviesPage extends BasePage {
@@ -13,8 +13,8 @@ class MoviesPage extends BasePage {
         let previousMoviesCount = 0;
         const targetMoviesText = await this.getText(this.numberMovies);
         const targetMoviesCount = parseInt(targetMoviesText.split(" ")[0], 10);
-        const pollingInterval = 2000; // Wait 2 seconds between each scroll
-        const timeout = 1000000; // Total timeout (100 seconds)
+        const pollingInterval = 2000; 
+        const timeout = 1000000; 
         const startTime = Date.now();
 
         while ((Date.now() - startTime) < timeout) {
@@ -52,10 +52,8 @@ class MoviesPage extends BasePage {
                 break; 
             }
 
-            // Scroll to the bottom to load more movies
             await this.scrollToBottom();
 
-            // Wait for new elements to load
             await new Promise(resolve => setTimeout(resolve, pollingInterval));
         }
 

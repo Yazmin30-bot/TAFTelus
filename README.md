@@ -47,3 +47,12 @@ Run the following command:
 ```bash
 npm test
 ```
+
+### 4. Check the report generated
+
+On the folder mochawesome-report You will find the HTML and JSON report file
+
+
+![Alt text](./image.png)
+
+
