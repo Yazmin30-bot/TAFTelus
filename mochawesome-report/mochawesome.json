@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-26T20:30:35.381Z",
+    "end": "2025-03-26T20:31:34.761Z",
+    "duration": 59380,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d17fbf8c-c1ee-4ed1-a2af-53fa3bbee0d7",
+      "title": "",
+      "fullFile": "/Users/yazmintinocoperez/js/TAFTelus/test/tests/AutomationTest.js",
+      "file": "/test/tests/AutomationTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1f1acf08-fb82-4c49-b324-4dbd35abe966",
+          "title": "Telus TV Automation",
+          "fullFile": "/Users/yazmintinocoperez/js/TAFTelus/test/tests/AutomationTest.js",
+          "file": "/test/tests/AutomationTest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Telus TV Automation\"",
+              "fullTitle": "Telus TV Automation \"before all\" hook in \"Telus TV Automation\"",
+              "timedOut": false,
+              "duration": 2212,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser(\"chrome\").build();\nhomePage = new HomePage(driver);\nonDemandPage = new OnDemandPage(driver);\nmoviesPage = new MoviesPage(driver);\ndetailPage = new DetailPage(driver);\nawait driver.get(\"https://telustvplus.com/\");",
+              "err": {},
+              "uuid": "8f43ddc4-bc5b-4da9-98a4-7fa9e79fff38",
+              "parentUUID": "1f1acf08-fb82-4c49-b324-4dbd35abe966",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Telus TV Automation\"",
+              "fullTitle": "Telus TV Automation \"after all\" hook in \"Telus TV Automation\"",
+              "timedOut": false,
+              "duration": 56,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "0a52811b-ec42-4fda-954f-657ebe21b2c1",
+              "parentUUID": "1f1acf08-fb82-4c49-b324-4dbd35abe966",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "The asset with the E rating should be displayed",
+              "fullTitle": "Telus TV Automation The asset with the E rating should be displayed",
+              "timedOut": false,
+              "duration": 57108,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await homePage.closePopup();\nawait homePage.goToOnDemand();\nawait onDemandPage.viewAllMovies();\nawait onDemandPage.filterAnimatedMovies();\nawait moviesPage.getAndClickOnRating(\"E\");\nlet rating = await detailPage.getRating();\nassert.strictEqual(rating, \"E\", `Expected rating \"E\", but found \"${rating}\"`);",
+              "err": {},
+              "uuid": "6b6f9fec-80ae-499e-9c34-6dceec23bb05",
+              "parentUUID": "1f1acf08-fb82-4c49-b324-4dbd35abe966",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6b6f9fec-80ae-499e-9c34-6dceec23bb05"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 57108,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 1000000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 1000000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

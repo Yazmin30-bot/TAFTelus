@@ -6,8 +6,8 @@ logs/
 *.log
 
 # Test reports
-mochawesome-report/
-test-results/
+mochawesome-report/assets/
+
 
 # Environment variables
 .env
