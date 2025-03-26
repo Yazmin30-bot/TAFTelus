@@ -1,0 +1,32 @@
+{
+  "name": "taftelus",
+  "version": "1.0.0",
+  "description": "this is a test",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+  "test": "mocha 'test/**/*.js' --reporter mochawesome --timeout 1000000"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yazmin30-bot/TAFTelus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yazmin30-bot/TAFTelus/issues"
+  },
+  "homepage": "https://github.com/Yazmin30-bot/TAFTelus#readme",
+  "dependencies": {
+    "chromedriver": "^134.0.5",
+    "mocha": "^11.1.0",
+    "selenium-webdriver": "^4.30.0"
+  },
+  "devDependencies": {
+    "mochawesome": "^7.1.3"
+  }
+}
