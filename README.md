@@ -30,3 +30,18 @@ If you haven't already cloned the repository, run the following command:
 
 ```bash
 git clone https://github.com/Yazmin30-bot/TAFTelus.git
+
+
+### 2. Install dependencies
+
+Open the project using Visual Studio Code and in the terminal run the following command:
+
+```bash
+npm install
+
+### 3. Run the test case
+
+Run the following command:
+
+```bash
+npm test
